@@ -159,6 +159,9 @@ INSERT INTO `tbl_usuario`(`idPerfilUsuario`, `cpf`, `nome`, `email`, `senha`, `e
 VALUES (2,00000000003, 'Funcionario','funcionario@funcionario', 'funcionario', 'Rua La casa do Carallo', '2018-10-29 16:00:00');
 INSERT INTO `tbl_usuario`(`idPerfilUsuario`, `cpf`, `nome`, `email`, `senha`, `endereco`,`dt_cadastro`) 
 VALUES (3,00000000004, 'Usuario','usuario@usuario', 'usuario', 'Rua La casa do Carallo', '2018-10-29 16:00:00');
+
+
+ALTER TABLE `tbl_usuario` CHANGE `cpf` `cpf` VARCHAR(20) NOT NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
