@@ -30,13 +30,6 @@
                   <li><a href="#">3</a></li>
                   <li><a href="#">&raquo;</a></li>
                 </ul>
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Pesquisar">
-
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
               </div>
             </div>
             <!-- /.box-header -->
@@ -47,7 +40,8 @@
                   <th>Nome</th>
                   <th>CPF</th>
                   <th>E-mail</th>
-                  <th>Situação</th>
+                  <th>STATUS</th>
+                  <th></th>
                 </tr>
                 <?php
                   foreach ($resultado as $users) {

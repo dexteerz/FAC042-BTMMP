@@ -137,12 +137,12 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="lista_usuarios.php"><i class="fa fa-circle-o"></i> Usuários</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Carros</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Formas de Pagamento</a></li>
+            <li><a href="404.php"><i class="fa fa-circle-o"></i> Carros</a></li>
+            <li><a href="404.php"><i class="fa fa-circle-o"></i> Formas de Pagamento</a></li>
           </ul>
         </li>
         <li>
-          <a href="#">
+          <a href="404.php">
             <i class="fa fa-calendar"></i> <span>Reservar Veículo</span>
           </a>
         </li>
@@ -155,8 +155,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Reservas</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Cadastros</a></li>
+            <li><a href="404.php"><i class="fa fa-circle-o"></i> Reservas</a></li>
+            <li><a href="404.php"><i class="fa fa-circle-o"></i> Cadastros</a></li>
           </ul>
         </li>
         
