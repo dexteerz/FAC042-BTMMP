@@ -12,7 +12,7 @@
 
   </div>
   <div class="box-body">
-    <form class="form-horizontal" action="outras/salvar_usuario.php" method="post">
+    <form class="form-horizontal" action="model/salvar_usuario.php" method="post">
       <fieldset>
       <!-- Form Name -->
       <!-- Select Basic -->

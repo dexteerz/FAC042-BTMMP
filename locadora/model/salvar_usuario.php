@@ -29,6 +29,6 @@ $sql = "INSERT INTO `tbl_usuario` (`idUsuario`, `idPerfilUsuario`, `cpf`, `nome`
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
-
+header("location:../lista_usuarios.php");
 
   ?>    
