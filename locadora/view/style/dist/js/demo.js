@@ -189,55 +189,55 @@ $(function () {
     // Layout options
     $demoSettings.append(
         '<h4 class="control-sidebar-heading">'
-        + 'Layout Options'
+        + 'Opções de Layout'
         + '</h4>'
         // Fixed layout
         + '<div class="form-group">'
         + '<label class="control-sidebar-subheading">'
         + '<input type="checkbox"data-layout="fixed"class="pull-right"/> '
-        + 'Fixed layout'
+        + 'Layout Fixo'
         + '</label>'
-        + '<p>Activate the fixed layout. You can\'t use fixed and boxed layouts together</p>'
+        + '<p>Ative o layout fixo. Você não pode usar Layouts Fixos e Encaixados juntos</p>'
         + '</div>'
         // Boxed layout
         + '<div class="form-group">'
         + '<label class="control-sidebar-subheading">'
         + '<input type="checkbox"data-layout="layout-boxed" class="pull-right"/> '
-        + 'Boxed Layout'
+        + 'Layout em Caixa'
         + '</label>'
-        + '<p>Activate the boxed layout</p>'
+        + '<p>Ativar o layout em caixa</p>'
         + '</div>'
         // Sidebar Toggle
         + '<div class="form-group">'
         + '<label class="control-sidebar-subheading">'
         + '<input type="checkbox"data-layout="sidebar-collapse"class="pull-right"/> '
-        + 'Toggle Sidebar'
+        + 'Alternar Barra Lateral'
         + '</label>'
-        + '<p>Toggle the left sidebar\'s state (open or collapse)</p>'
+        + '<p>Alternar o estado da barra lateral esquerda (abrir ou recolher)</p>'
         + '</div>'
         // Sidebar mini expand on hover toggle
         + '<div class="form-group">'
         + '<label class="control-sidebar-subheading">'
         + '<input type="checkbox"data-enable="expandOnHover"class="pull-right"/> '
-        + 'Sidebar Expand on Hover'
+        + 'Barra lateral Expandir com foco'
         + '</label>'
-        + '<p>Let the sidebar mini expand on hover</p>'
+        + '<p>Deixe a mini barra lateral expandir em foco</p>'
         + '</div>'
         // Control Sidebar Toggle
         + '<div class="form-group">'
         + '<label class="control-sidebar-subheading">'
         + '<input type="checkbox"data-controlsidebar="control-sidebar-open"class="pull-right"/> '
-        + 'Toggle Right Sidebar Slide'
+        + 'Alternar a corrediça da barra lateral direita'
         + '</label>'
-        + '<p>Toggle between slide over content and push content effects</p>'
+        + '<p>Alternar entre o slide sobre o conteúdo e os efeitos de conteúdo</p>'
         + '</div>'
         // Control Sidebar Skin Toggle
         + '<div class="form-group">'
         + '<label class="control-sidebar-subheading">'
         + '<input type="checkbox"data-sidebarskin="toggle"class="pull-right"/> '
-        + 'Toggle Right Sidebar Skin'
+        + 'Alternar o tema da barra lateral direita'
         + '</label>'
-        + '<p>Toggle between dark and light skins for the right sidebar</p>'
+        + '<p>Alternar entre temas escuras e claras para a barra lateral direita</p>'
         + '</div>'
     )
     var $skinsList = $('<ul />', {'class': 'list-unstyled clearfix'})
@@ -342,7 +342,7 @@ $(function () {
                 + '<p class="text-center no-margin" style="font-size: 12px">Yellow Light</p>')
     $skinsList.append($skinYellowLight)
 
-    $demoSettings.append('<h4 class="control-sidebar-heading">Skins</h4>')
+    $demoSettings.append('<h4 class="control-sidebar-heading">Temas</h4>')
     $demoSettings.append($skinsList)
 
     $tabPane.append($demoSettings)
