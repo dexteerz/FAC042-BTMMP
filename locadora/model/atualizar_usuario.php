@@ -22,7 +22,6 @@ $sql = "UPDATE `tbl_usuario` SET
         `cpf` = '$cpf', 
         `nome` = '$nome', 
         `email` = '$email', 
-        `senha` = '$senha', 
         `endereco` = '$endereco', 
         `status` = '$status' 
         WHERE `tbl_usuario`.`idUsuario` = $idUsuario_editar";

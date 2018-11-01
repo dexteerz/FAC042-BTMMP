@@ -105,18 +105,6 @@
       </div>
 
       <div class="form-group">
-        <label class="col-md-4 control-label" for="senha">Senha</label>
-          <div class="col-md-4">
-          <input  id="senha" 
-          name="senha" 
-          type="password"
-          value="<?php echo $usuario['password'];?>" 
-          placeholder="*****" 
-          class="form-control input-md" 
-          required="">
-        </div>
-      </div>
-      <div class="form-group">
         <label class="col-md-4 control-label" for="radios">Status</label>
         <div class="col-md-4">
           <div class="radio">
