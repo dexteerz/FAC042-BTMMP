@@ -162,6 +162,10 @@ VALUES (3,00000000004, 'Usuario','usuario@usuario', 'usuario', 'Rua La casa do C
 
 
 ALTER TABLE `tbl_usuario` CHANGE `cpf` `cpf` VARCHAR(20) NOT NULL;
+
+ALTER TABLE `tbl_usuario` CHANGE `dt_cadastro` `dt_cadastro` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
