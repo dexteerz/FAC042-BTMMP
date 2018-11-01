@@ -8,7 +8,8 @@
 <div class="box">
   <div class="box-header with-border">
     <h3 class="box-title">Cadastrar Usuario</h3>
-
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
 
   </div>
   <div class="box-body">

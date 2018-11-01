@@ -166,7 +166,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="lista_usuarios.php"><i class="fa fa-circle-o"></i> Usuários</a></li>
-            <li><a href="404.php"><i class="fa fa-circle-o"></i> Carros</a></li>
+            <li><a href="lista_veiculos.php"><i class="fa fa-circle-o"></i> Carros</a></li>
             <li><a href="404.php"><i class="fa fa-circle-o"></i> Formas de Pagamento</a></li>
           </ul>
         </li>
