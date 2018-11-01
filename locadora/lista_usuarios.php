@@ -58,9 +58,9 @@
                     <td><?php echo $users['email'] ?></td>
                     <td><?php echo $situacao?></td>
                     <td style="text-align: center; width: 100px;">
-                      <a class="glyphicon glyphicon-search"></a>&nbsp;&nbsp;&nbsp;
-                      <a class="glyphicon glyphicon-edit"></a>&nbsp;&nbsp;&nbsp;
-                      <a class="glyphicon glyphicon-remove"></a>
+                    <a href="visualizar_usuario.php?id=<?php echo $users['idUsuario'] ?>" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#modal-default"></a>&nbsp;&nbsp;&nbsp;
+                    <a href="editar_usuario.php?id=<?php echo $users['idUsuario'] ?>" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modal-default"></a>&nbsp;&nbsp;&nbsp;
+                    <a href="model/desativa_usuario.php?id=<?php echo $users['idUsuario'] ?>"onclick='return confirm("Deseja realmente desativar este Usário?");' class="glyphicon glyphicon-remove"></a>
                     </td>
                   </tr>
                   <?php
@@ -74,7 +74,7 @@
         </div>
     </div>
   </div>
-  <div class="modal fade" id="modal-default">
+  <div class="modal fade" id="modal-default" data-keyboard="false" data-backdrop="static">
           <div class="modal-dialog">
             <div class="modal-content">
               
