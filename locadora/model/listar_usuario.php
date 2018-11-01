@@ -3,7 +3,7 @@
   
     $conn = getConexao();
 
-    $sql = "SELECT * FROM tbl_usuario";
+    $sql = "SELECT * FROM tbl_usuario ORDER BY dt_cadastro DESC";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $resultado = $stmt->fetchAll();

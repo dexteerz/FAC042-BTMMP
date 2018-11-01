@@ -6,8 +6,6 @@ $nome = $_POST["nome"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 $endereco = $_POST["endereco"];
-$dt_cadastro = $_POST["dt_cadastro"];
-$status = $_POST["status"];
 
 
 
@@ -16,16 +14,14 @@ include 'conexao.php';
  
 $conn = getConexao();
 
-$sql = "INSERT INTO `tbl_usuario` (`idUsuario`, `idPerfilUsuario`, `cpf`, `nome`, `email`, `senha`, `endereco`, `dt_cadastro`, `status`) 
+$sql = "INSERT INTO `tbl_usuario` (`idUsuario`, `idPerfilUsuario`, `cpf`, `nome`, `email`, `senha`, `endereco`) 
         VALUES (NULL, 
         '$idPerfilUsuario', 
         '$cpf', 
         '$nome', 
         '$email', 
         '$senha', 
-        '$endereco', 
-        '$dt_cadastro', 
-        '$status')";
+        '$endereco')";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();
