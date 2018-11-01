@@ -164,7 +164,78 @@ VALUES (3,00000000004, 'Usuario','usuario@usuario', 'usuario', 'Rua La casa do C
 ALTER TABLE `tbl_usuario` CHANGE `cpf` `cpf` VARCHAR(20) NOT NULL;
 
 ALTER TABLE `tbl_usuario` CHANGE `dt_cadastro` `dt_cadastro` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE `tbl_veiculo` CHANGE `dt_cadastro` `dt_cadastro` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE `tbl_reserva` CHANGE `data_reserva` `data_reserva` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
 
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Mini',121.07);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Econômico',100.17);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Compacto', 105.13);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Standard',115.92);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Intermediário',114.68);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Premium', 200.24);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Full-Size',250.33);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('SUV',140.92);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Especial',200.24);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Luxo',367.82);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Conversível',180.30);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Minivan',185.21);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Van',208.32);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Utilitário',240.87);
+INSERT INTO `tbl_categoria`(`descricao`, `valorDiaria`) VALUES ('Pick-Up',236.55);
+
+CREATE VIEW v_veiculocategoria
+
+AS
+
+SELECT  a.placa placa, a.chassi chassi,
+ a.modelo modelo, a.cor cor, b.descricao categoria, a.status status
+
+FROM tbl_veiculo a
+INNER JOIN tbl_categoria b
+
+ON a.idCategoria = b.idCategoria;
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('XXX-3212', 'AAAA', 'MODELO 1', 'PRETO', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('AAA-5123', 'BBBB', 'MODELO 2', 'ROSA', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('ADW-1231', 'CCCC', 'MODELO 3', 'AZUL', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('CAA-1345', 'DDDD', 'MODELO 4', 'PRETO', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('VVD-6760', 'EEEE', 'MODELO 5', 'PRETO', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('CXS-6543', 'FFFF', 'MODELO 6', 'PRATA', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('CCC-5141', 'GGGG', 'MODELO 7', 'PRATA', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('VAS-1809', 'HHHH', 'MODELO 8', 'AZUL', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('FFF-8645', 'IIII', 'MODELO 9', 'AZUL', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('CAA-8999', 'JJJJ', 'MODELO 10', 'PRETO', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('DSS-2351', 'KKKK', 'MODELO 11', 'AMARELO', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('CXZ-5161', 'ÇLLL', 'MODELO 12', 'ROSA', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('ZXC-2166', 'QQQQ', 'MODELO 13', 'AMARELO', 2);
+
+INSERT INTO `tbl_veiculo`(`placa`, `chassi`, `modelo`, `cor`, `idCategoria`) 
+VALUES ('XXA-7899', 'RRRR', 'MODELO 14', 'AMARELO', 2);
 
 COMMIT;
 
