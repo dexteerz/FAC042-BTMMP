@@ -63,7 +63,9 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="view/style/dist/img/avatar5.png" class="user-image" alt="User Image">
               <span class="hidden-xs">
+              
                 <?php  
                   if(isset($_SESSION['email']))  
                   {  
@@ -73,13 +75,40 @@
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
+              <li class="user-header">
+                <img src="view/style/dist/img/avatar5.png" class="img-circle" alt="User Image">
+
+                <p>
+                <?php  
+                  if(isset($_SESSION['email']))  
+                  {  
+                    echo $_SESSION['email'];  
+                  }  
+                ?>
+                  <small>Detalhes</small>
+                </p>
+              </li>
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
               <li class="user-footer">
                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="../control/logout.php" class="btn btn-default btn-flat">Logout</a>
                 </div>
                 <div class="pull-right">
-                  
+                
                 </div>
               </li>
             </ul>
@@ -99,7 +128,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="view/style//dist/img/logo.png" class="img-circle" alt="User Image">
+          <img src="view/style/dist/img/logo.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>

@@ -2,7 +2,7 @@
 
     $result="";
     if(isset($_POST['submit'])){
-        require 'controler/phpmailer/PHPMailerAutoload.php';
+        require 'control/phpmailer/PHPMailerAutoload.php';
         $mail = new PHPMailer;
 
         $mail->Host='smtp.gmail.com';
