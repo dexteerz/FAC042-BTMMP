@@ -3,10 +3,10 @@
  session_start();  
  if(isset($_SESSION["email"]))  
  {  
-      
+
  }  
  else  
  {  
-      header("location:../index.php");  
+      header("location:index.php");  
  }  
  ?>  

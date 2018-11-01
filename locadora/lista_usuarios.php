@@ -37,9 +37,9 @@
               <?php
               foreach ($resultado as $users) {
               if($users['status'] == 1){
-                $situacao = '<span class="label label-success">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ativo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+                $situacao = '<span class="fa fa-circle text-green"></span>';
               } else {
-                $situacao = '<span class="label label-danger">Desativado</span>';
+                $situacao = '<span class="fa fa-circle text-gray"></span>';
               }
               ?>
               <tr>
