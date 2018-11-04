@@ -1,5 +1,6 @@
 <?php
   include 'model/conexao.php';
+  include 'model/header.php';
 
   $conn = getConexao();
 
@@ -142,3 +143,7 @@
 <!-- /.box -->
 
 </section>
+
+<?php
+  include 'model/footer.php'
+?>

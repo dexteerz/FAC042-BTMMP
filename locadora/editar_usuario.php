@@ -1,7 +1,8 @@
 <?php
   include 'model/conexao.php';
+  include 'model/header.php';
 
- $conn = getConexao();
+  $conn = getConexao();
 
   $id = $_GET['id'];
   $sql = "SELECT * FROM tbl_usuario WHERE idUsuario = $id";
@@ -141,3 +142,7 @@
 <!-- /.box -->
 
 </section>
+
+<?php
+  include 'model/footer.php'
+?>

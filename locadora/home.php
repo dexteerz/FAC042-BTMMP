@@ -43,5 +43,5 @@
         </section>
 
 <?php
-  include 'model/rodape.php'
+  include 'model/footer.php'
 ?>

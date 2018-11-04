@@ -32,7 +32,7 @@
                       <th><center>Categoria</center></th>
                       <th><center>Cor</center></th>
                       <th><center>STATUS</center></th>
-                      <th><center><a href="cadastra_veiculo.php" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#modal-default"></a>
+                      <th><center><a href="cadastra_veiculo.php" class="glyphicon glyphicon-plus"> NOVO</a>
                     </tr>
                   </thead>
                   <tbody style="text-align: center;">
@@ -40,7 +40,7 @@
                     foreach ($resultado as $veiculos) {
                       if($veiculos['status'] == 1){
                         $situacao = '<span class="fa fa-circle text-green"></span>';
-                      } else if($veiculos['status'] == 2){
+                      } else if($veiculos['status'] == 0){
                         $situacao = '<span class="fa fa-circle text-gray"></span>';
                       } else {
                         $situacao = '<span class="fa fa-circle text-red"></span>';
@@ -78,9 +78,9 @@
                     <td><?php echo '<span class="badge bg-'.$corveiculo.'">'.$veiculos['cor'].'</span>' ?></td>
                     <td><?php echo $situacao?></td>
                     <td style="text-align: center; width: 100px;">
-                      <a class="glyphicon glyphicon-search"></a>&nbsp;&nbsp;&nbsp;
-                      <a class="glyphicon glyphicon-edit"></a>&nbsp;&nbsp;&nbsp;
-                      <a class="glyphicon glyphicon-remove"></a>
+                    <a href="visualizar_veiculo.php?id=<?php echo $veiculos['idVeiculo'] ?>" class="glyphicon glyphicon-search"></a>&nbsp;&nbsp;&nbsp;
+                    <a href="editar_veiculo.php?id=<?php echo $veiculos['idVeiculo'] ?>" class="glyphicon glyphicon-edit"></a>&nbsp;&nbsp;&nbsp;
+                    <a href="model/desativa_veiculo.php?id=<?php echo $veiculos['idVeiculo'] ?>"onclick='return confirm("Deseja realmente desativar este Veiculo?");' class="glyphicon glyphicon-remove"></a>
                     </td>
                   </tr>
                   <?php
@@ -94,18 +94,8 @@
         </div>
     </div>
   </div>
-  <div class="modal fade" id="modal-default">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
-</div>
   
 <?php
-  include 'model/rodape.php'
+  include 'model/footer.php';
 ?>
 

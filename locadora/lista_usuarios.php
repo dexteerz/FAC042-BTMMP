@@ -31,7 +31,7 @@
                       <th><center>CPF</center></th>
                       <th><center>E-mail</center></th>
                       <th><center>STATUS</center></th>
-                      <th><center><a href="cadastra_usuario.php" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#modal-default"></a>
+                      <th><center><a href="cadastra_usuario.php" class="glyphicon glyphicon-plus"> NOVO</a>
                     </tr>
                   </thead>
                   <tbody style="text-align: center;">
@@ -58,8 +58,8 @@
                     <td><?php echo $users['email'] ?></td>
                     <td><?php echo $situacao?></td>
                     <td style="text-align: center; width: 100px;">
-                    <a href="visualizar_usuario.php?id=<?php echo $users['idUsuario'] ?>" class="glyphicon glyphicon-search" data-toggle="modal" data-target="#modal-default"></a>&nbsp;&nbsp;&nbsp;
-                    <a href="editar_usuario.php?id=<?php echo $users['idUsuario'] ?>" class="glyphicon glyphicon-edit" data-toggle="modal" data-target="#modal-default"></a>&nbsp;&nbsp;&nbsp;
+                    <a href="visualizar_usuario.php?id=<?php echo $users['idUsuario'] ?>" class="glyphicon glyphicon-search" data-toggle="modal"></a>&nbsp;&nbsp;&nbsp;
+                    <a href="editar_usuario.php?id=<?php echo $users['idUsuario'] ?>" class="glyphicon glyphicon-edit" data-toggle="modal"></a>&nbsp;&nbsp;&nbsp;
                     <a href="model/desativa_usuario.php?id=<?php echo $users['idUsuario'] ?>"onclick='return confirm("Deseja realmente desativar este Usário?");' class="glyphicon glyphicon-remove"></a>
                     </td>
                   </tr>
@@ -74,18 +74,9 @@
         </div>
     </div>
   </div>
-  <div class="modal fade" id="modal-default" data-keyboard="false" data-backdrop="static">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
 </div>
   
 <?php
-  include 'model/rodape.php'
+  include 'model/footer.php'
 ?>
 

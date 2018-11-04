@@ -1,7 +1,7 @@
 <?php
-
   include 'model/conexao.php';
   include 'model/header.php';
+  include 'model/listar_categoria.php';
 ?>
 <section class="content">
 
@@ -14,73 +14,64 @@
 
   </div>
   <div class="box-body">
-    <form action="model/salvar_usuario.php" method="post">
-      <div class="box-body">
+    <form action="model/salvar_veiculo.php" method="post">
+    <div class="box-body">
         <div class="form-group">
-          <label for="selectbasic">Tipo de Usuario</label>
-          <div>
-            <select id="idPerfilUsuario" name="idPerfilUsuario" class="form-control">
-              <option value="1">Administrador</option>
-              <option value="2">Funcionario</option>
-              <option value="3">Usuario</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="nome">Nome</label>  
+          <label for="placa">Placa</label>  
             <div>
-              <input  id="nome" 
-              name="nome" 
+              <input  id="placa" 
+              name="placa" 
               type="text" 
-              placeholder="Digite o nome completo" 
+              placeholder="Placa do veículo" 
               class="form-control input-md" 
               required>
             </div>
         </div>
         <div class="form-group">
-          <label  for="endereco">Endereço</label>  
+          <label  for="chassi">Chassi</label>  
           <div>
-            <input  id="endereco" 
-            name="endereco" 
+            <input  id="chassi" 
+            name="chassi" 
             type="text" 
-            placeholder="Rua , numero" 
+            placeholder="Nº do Chassi" 
             class="form-control input-md" 
             required>
           </div>
         </div>
         <div class="form-group">
-          <label for="cpf">CPF</label>  
+          <label for="modelo">Modelo</label>  
           <div>
-            <input  id="cpf" 
-            name="cpf" 
+            <input  id="modelo" 
+            name="modelo" 
             type="text" 
-            placeholder="000.000.000-00" 
+            placeholder="Nome do Modelo" 
             class="form-control input-md" 
             required>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>  
+          <label for="cor">Cor</label>  
             <div>
-            <input  id="email" 
-            name="email" 
+            <input  id="cor" 
+            name="cor" 
             type="text"
-            placeholder="email@email"
+            placeholder="Digite a Cor"
             class="form-control input-md" 
             required>
           </div>
         </div>
-
+       
         <div class="form-group">
-          <label for="senha">Senha</label>
-            <div>
-            <input  id="senha" 
-            name="senha" 
-            type="password" 
-            placeholder="*****" 
-            class="form-control input-md" 
-            required>
+          <label for="categoria">Categoria</label>
+          <div>
+            <select id="idCategoria" name="idCategoria"  class="form-control input-md">
+              <?php
+                foreach ($resultado as $categoria) {
+                  echo '<option value="'.$categoria['idCategoria'].'">'.$categoria['descricao'].'</option>';
+                };
+              ?>
+            </select>
           </div>
         </div>
       <!-- /.box-body -->
