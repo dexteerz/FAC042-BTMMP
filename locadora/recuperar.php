@@ -1,39 +1,65 @@
-<?php
-
+﻿<?php
+ 
+    include 'model/conexao.php';
+    
+    $conn = getConexao();
+    $count = 0;
     $result="";
-    if(isset($_POST['submit'])){
-        require 'control/phpmailer/PHPMailerAutoload.php';
+    if(isset($_POST['submit'])) {  
+      if(empty($_POST['email'])) {  
+        $result = 'Preencha o campo e-mail';  
+      } else {  
+        $email = $_POST['email'];
+        $sql = "SELECT * FROM tbl_usuario WHERE email = '$email'";
+        $stmt = $conn->prepare($sql);  
+        $stmt->execute();
+        $resultado = $stmt->fetchAll();
+        $count = $stmt->rowCount();
+
+        
+        if($count > 0){ 
+          $usuario = $resultado[0];
+          require 'control/phpmailer/PHPMailerAutoload.php';
              
-        $mail = new PHPMailer;
+          $mail = new PHPMailer;
+  
+          $mail->Host='smtp.gmail.com';
+          $mail->Port=587;
+          $mail->SMTPAuth=true;
+          $mail->SMTPSecure='tls';
+          $mail->Username='domlyko8@gmail.com';
+          $mail->Password='AGzzcso1$';
+          $mail->isSMTP();
+  
+          $mail->setFrom($_POST['email'],'LOCADORA');
+          $mail->addAddress($_POST['email']);
+          $mail->addReplyTo($_POST['email'],'LOCADORA');
+  
+          $mail->isHTML(true);
+          $mail->Subject='RECUPERACAO DE SENHA';
+          $mail->Body='<h1 align=center>E-MAIL: '.$_POST['email'].'<br>SENHA: '.$usuario['senha'].'</h1>';
+  
+          if(!$mail->send()){
+              $result="Serviço indisponível, tente novamente mais tarde.";
+          } else {
+              $result="Sua senha foi enviada para ".$_POST['email'].", favor verificar sua caixa de entrada.";
+          }  
 
-        $mail->Host='smtp.gmail.com';
-        $mail->Port=587;
-        $mail->SMTPAuth=true;
-        $mail->SMTPSecure='tls';
-        $mail->Username='domlyko8@gmail.com';
-        $mail->Password='AGzzcso1$';
-        $mail->isSMTP();
+          $count = 1;
+        } else {  
+          $result = 'E-mail não cadastrado no sistema, tente novamente mais tarde...';  
+        } 
 
-        $mail->setFrom($_POST['email'],'LOCADORA');
-        $mail->addAddress($_POST['email']);
-        $mail->addReplyTo($_POST['email'],'LOCADORA');
+      }  
+    } 
 
-        $mail->isHTML(true);
-        $mail->Subject='RECUPERAÇÃO DE SENHA';
-        $mail->Body='<h1 align=center>E-MAIL: '.$_POST['email'].'<br>SENHA: ... RECURSO NÃO DISPONIVEL TENTE NOVAMENTE MAIS TARDE</h1>';
-
-        if(!$mail->send()){
-            $result="Serviço indisponível, tente novamente mais tarde.";
-        } else {
-            $result="Sua senha foi enviada para ".$_POST['email'].", favor verificar sua caixa de entrada.";
-        }
-    }
 ?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>LocadoraBTMMP | Login</title>
@@ -70,9 +96,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Esqueci minha senha</p>
     <h5 class="text-center text-success"><?= $result; ?></h5>
-    <form method="post" action="">
+    <form method="post" action="recuperar.php">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Digite o e-mail de recuperação" id="email" name="email">
+        <input type="email" class="form-control" placeholder="Digite o e-mail de recuperação" id="email" name="email" <?php if($count > 0) { echo "disabled='true'"; } ?>>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="row">
@@ -85,7 +111,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" name="submit" id="submit">ENVIAR</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="submit" id="submit" >ENVIAR</button>
         </div>
         <!-- /.col -->
       </div>
