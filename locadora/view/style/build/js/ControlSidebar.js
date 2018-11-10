@@ -17,29 +17,29 @@
 
   var Selector = {
     sidebar: '.control-sidebar',
-    data   : '[data-toggle="control-sidebar"]',
-    open   : '.control-sidebar-open',
-    bg     : '.control-sidebar-bg',
+    data: '[data-toggle="control-sidebar"]',
+    open: '.control-sidebar-open',
+    bg: '.control-sidebar-bg',
     wrapper: '.wrapper',
     content: '.content-wrapper',
-    boxed  : '.layout-boxed'
+    boxed: '.layout-boxed'
   };
 
   var ClassName = {
-    open : 'control-sidebar-open',
+    open: 'control-sidebar-open',
     fixed: 'fixed'
   };
 
   var Event = {
     collapsed: 'collapsed.controlsidebar',
-    expanded : 'expanded.controlsidebar'
+    expanded: 'expanded.controlsidebar'
   };
 
   // ControlSidebar Class Definition
   // ===============================
   var ControlSidebar = function (element, options) {
-    this.element         = element;
-    this.options         = options;
+    this.element = element;
+    this.options = options;
     this.hasBindedResize = false;
 
     this.init();
@@ -96,7 +96,7 @@
   ControlSidebar.prototype._fixForBoxed = function (bg) {
     bg.css({
       position: 'absolute',
-      height  : $(Selector.wrapper).height()
+      height: $(Selector.wrapper).height()
     });
   };
 
@@ -105,7 +105,7 @@
   function Plugin(option) {
     return this.each(function () {
       var $this = $(this);
-      var data  = $this.data(DataKey);
+      var data = $this.data(DataKey);
 
       if (!data) {
         var options = $.extend({}, Default, $this.data(), typeof option == 'object' && option);
@@ -118,7 +118,7 @@
 
   var old = $.fn.controlSidebar;
 
-  $.fn.controlSidebar             = Plugin;
+  $.fn.controlSidebar = Plugin;
   $.fn.controlSidebar.Constructor = ControlSidebar;
 
   // No Conflict Mode

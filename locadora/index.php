@@ -1,5 +1,5 @@
 <?php
-	include 'control/conexaoLogar.php'
+  include 'control/conexaoLogar.php';
 ?>
 
 

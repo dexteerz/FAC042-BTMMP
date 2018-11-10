@@ -1,5 +1,5 @@
 <?php
-  include 'control/sessao.php'
+  include 'control/sessao.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,9 +67,10 @@
               <span class="hidden-xs">
               
                 <?php  
-                  if(isset($_SESSION['email']))  
+                  if(isset($_SESSION['nome']))  
                   {  
-                    echo $_SESSION['email'];  
+                    echo $_SESSION['nome'];
+                    echo " - ".$_SESSION['cpf'];
                   }  
                 ?></span>
             </a>
@@ -80,9 +81,9 @@
 
                 <p>
                 <?php  
-                  if(isset($_SESSION['email']))  
+                  if(isset($_SESSION['nome']))  
                   {  
-                    echo $_SESSION['email'];  
+                    echo $_SESSION['nome'];  
                   }  
                 ?>
                   <small>Detalhes</small>
@@ -133,9 +134,9 @@
         <div class="pull-left info">
           <p>
           <?php  
-            if(isset($_SESSION['email']))  
+            if(isset($_SESSION['nome']))  
             {  
-              echo $_SESSION['email'];  
+              echo $_SESSION['nome'];  
             }  
           ?>
           </p>

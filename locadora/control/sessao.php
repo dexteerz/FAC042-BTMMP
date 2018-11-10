@@ -1,12 +1,7 @@
-<?php  
- //login_success.php  
- session_start();  
- if(isset($_SESSION["email"]))  
- {  
+<?php
+//login_success.php
+session_start();
 
- }  
- else  
- {  
-      header("location:index.php");  
- }  
- ?>  
+if (!isset($_SESSION["id"])) {
+    header("location:index.php");
+}
