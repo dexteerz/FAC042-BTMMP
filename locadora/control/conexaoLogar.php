@@ -35,7 +35,13 @@ try
                 $_SESSION["email"] = $dados['email'];
                 $_SESSION["endereco"] = $dados['endereco'];
                 $_SESSION["cpf"] = $dados['cpf'];
-                $_SESSION["idPerfilUsuario"] = $dados['idPerfilUsuario'];
+                if($dados['idPerfilUsuario'] == 1){
+                    $_SESSION["idPerfilUsuario"] = "Administrador";
+                } else if ($dados['idPerfilUsuario'] == 2){
+                    $_SESSION['idPerfilUsuario'] = "Funcionario";
+                } else {
+                    $_SESSION["idPerfilUsuario"] = "Usuario";
+                }
                 header("location:home.php");
             } else {
                 $message = 'E-mail ou senha incorreta';

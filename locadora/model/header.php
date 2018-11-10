@@ -63,30 +63,30 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="view/style/dist/img/avatar5.png" class="user-image" alt="User Image">
+            <img src="view/style/dist/img/avatar0.png" class="user-image" alt="User Image">
               <span class="hidden-xs">
               
                 <?php  
-                  if(isset($_SESSION['nome']))  
+                  if(isset($_SESSION['id']))  
                   {  
                     echo $_SESSION['nome'];
-                    echo " - ".$_SESSION['cpf'];
                   }  
                 ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
               <li class="user-header">
-                <img src="view/style/dist/img/avatar5.png" class="img-circle" alt="User Image">
+                <img src="view/style/dist/img/avatar0.png" class="img-circle" alt="User Image">
 
                 <p>
                 <?php  
-                  if(isset($_SESSION['nome']))  
+                  if(isset($_SESSION['id']))  
                   {  
-                    echo $_SESSION['nome'];  
+                    echo "#".$_SESSION['id']." - ".$_SESSION['idPerfilUsuario'];
+                    echo "<small>".$_SESSION['email']."</small>";
                   }  
                 ?>
-                  <small>Detalhes</small>
+                  
                 </p>
               </li>
               <li class="user-body">
@@ -104,12 +104,11 @@
                 <!-- /.row -->
               </li>
               <li class="user-footer">
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="control/logout.php" class="btn btn-default btn-flat">Logout</a>
+                <div class="pull-left">
+                  <a href="404.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                
+                  <a href="control/logout.php" class="btn btn-default btn-flat">Logout</a>
                 </div>
               </li>
             </ul>
@@ -129,7 +128,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="view/style/dist/img/logo.png" class="img-circle" alt="User Image">
+          <img src="view/style/dist/img/avatar0.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>

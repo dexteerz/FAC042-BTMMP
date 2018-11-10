@@ -67,7 +67,7 @@
         <label class="col-md-4 control-label" for="singlebutton"></label>
         <div class="col-md-4">
           <input type="submit" class="btn btn-primary" value="Salvar">
-          <a href="lista_usuarios.php" class="btn btn-danger">Voltar</a>
+          <a href="lista_formapagamento.php" class="btn btn-danger">Voltar</a>
         </div>
       </div>
 

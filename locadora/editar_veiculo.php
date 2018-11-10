@@ -18,7 +18,7 @@
 <div class="box">
   <div class="box-header with-border">
     <h3 class="box-title">Editar Veiculo</h3>
-    <button type="button" class="close" onclick="location.href='lista_usuarios.php'" data-dismiss="modal" aria-label="Close">
+    <button type="button" class="close" onclick="location.href='lista_veiculos.php'" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
 
   </div>
