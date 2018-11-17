@@ -36,35 +36,105 @@
   <div class="register-box-body">
     <p class="login-box-msg">Registre-se para utilizar de nossos serviços</p>
 
-    <form action="registrar.php" method="post">
+    <form id="registrar" action="model/salvar_usuario_externo.php" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Nome Completo" id="nome" name="nome">
+        <input type="text" class="form-control" placeholder="Nome Completo" id="nome" name="nome" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf">
+        <input type="text" class="form-control" placeholder="CPF" id="cpf" name="cpf" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Endereço" id="endereco" name="endereco">
+        <input type="text" class="form-control" placeholder="Endereço" id="endereco" name="endereco" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+        <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha">
+        <input title="A senha deve conter pelo menos 6 caracteres, incluindo uma MAIUSCULA / minúsculas e números." type="password" class="form-control" placeholder="Senha" id="isenha" name="senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Confirmar Senha" id="csenha" name="csenha">
+      <div class="form-group has-feedback" id="confirmpass">
+        <input type="password" title="Por favor, digite a mesma senha anterior." class="form-control" placeholder="Confirmar Senha" id="icsenha" name="csenha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
+      <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+
+          // JavaScript form validation
+
+          var checkPassword = function(str)
+          {
+            var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+            return re.test(str);
+          };
+
+          var checkForm = function(e)
+          {
+            if(this.senha.value != "" && this.senha.value == this.csenha.value) {
+              if(!checkPassword(this.senha.value)) {
+                alert("A senha que você digitou não é válida!");
+                this.senha.focus();
+                e.preventDefault();
+                return;
+              }
+            } else {
+              alert("Erro: Por favor, verifique se você digitou e confirmou sua senha!");
+              this.csenha.focus();
+              e.preventDefault();
+              return;
+            }
+
+          };
+
+          var myForm = document.getElementById("registrar");
+          myForm.addEventListener("submit", checkForm, true);
+
+          // HTML5 form validation
+
+          var supports_input_validity = function()
+          {
+            var i = document.createElement("input");
+            return "setCustomValidity" in i;
+          }
+
+          if(supports_input_validity()) {
+
+            var pwd1Input = document.getElementById("isenha");
+            pwd1Input.setCustomValidity(pwd1Input.title);
+
+            var pwd2Input = document.getElementById("icsenha");
+
+            // input key handlers
+
+
+            pwd1Input.addEventListener("keyup", function(e) {
+              this.setCustomValidity(this.validity.patternMismatch ? pwd1Input.title : "");
+              if(this.checkValidity()) {
+                pwd2Input.pattern = RegExp.escape(this.value);
+                pwd2Input.setCustomValidity(pwd2Input.title);
+              } else {
+                pwd2Input.pattern = this.pattern;
+                pwd2Input.setCustomValidity("");
+              }
+            }, false);
+
+            pwd2Input.addEventListener("keyup", function(e) {
+              this.setCustomValidity(this.validity.patternMismatch ? pwd2Input.title : "");
+            }, false);
+
+          }
+
+        }, false);
+
+      </script>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            
+
           </div>
         </div>
         <!-- /.col -->
@@ -83,6 +153,7 @@
 
 <!-- jQuery 3 -->
 <script src="view/style/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="view/style/bower_components/jquery/dist/jquery.mask.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="view/style/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
@@ -93,6 +164,10 @@
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
       increaseArea: '20%' /* optional */
+    });
+    $(document).ready(function () { 
+        var $seuCampoCpf = $("#cpf");
+        $seuCampoCpf.mask('000.000.000-00', {reverse: true});
     });
   });
 </script>
