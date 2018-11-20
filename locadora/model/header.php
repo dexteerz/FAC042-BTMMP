@@ -82,7 +82,7 @@
                 <?php  
                   if(isset($_SESSION['id']))  
                   {  
-                    echo "#".$_SESSION['id']." - ".$_SESSION['idPerfilUsuario'];
+                    echo "#".$_SESSION['id']." - ".$_SESSION['perfil'];
                     echo "<small>".$_SESSION['email']."</small>";
                   }  
                 ?>
@@ -156,8 +156,13 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVEGAÇÃO</li>
-      
-        <li class="treeview">
+      <?php 
+       if($_SESSION['perfil'] != "Usuario"){
+        echo "<li class='treeview'>";
+       } else {
+        echo "<li class='treeview' style='display: none;'>";
+       }
+       ?>
           <a href="#">
             <i class="fa fa-edit"></i> <span>Cadastros</span>
             <span class="pull-right-container">

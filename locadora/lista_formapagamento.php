@@ -2,8 +2,7 @@
 <?php
   include 'model/header.php';
   include 'model/listar_formapagamento.php';
-  
-  
+
 ?>
 
 <div class="form-group">

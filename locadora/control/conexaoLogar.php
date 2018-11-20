@@ -36,11 +36,11 @@ try
                 $_SESSION["endereco"] = $dados['endereco'];
                 $_SESSION["cpf"] = $dados['cpf'];
                 if($dados['idPerfilUsuario'] == 1){
-                    $_SESSION["idPerfilUsuario"] = "Administrador";
+                    $_SESSION["perfil"] = "Administrador";
                 } else if ($dados['idPerfilUsuario'] == 2){
-                    $_SESSION['idPerfilUsuario'] = "Funcionario";
+                    $_SESSION['perfil'] = "Funcionario";
                 } else {
-                    $_SESSION["idPerfilUsuario"] = "Usuario";
+                    $_SESSION["perfil"] = "Usuario";
                 }
                 header("location:home.php");
             } else {
