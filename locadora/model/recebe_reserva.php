@@ -1,11 +1,10 @@
 
     <?php
         require '../control/sessao.php';
-        
+        include 'header.php';
 
-
-    $data1 = $_POST['data_inicio'];
-    $data2 = $_POST['data_fim'];
+    $data1 = ;
+    $data2 = substr($_POST['dataInicioFim'], 13, 11);
     $categoria =  $_POST['idCategoria'];
 
 
@@ -40,7 +39,10 @@
     }
     
 ?>
-<form action="fazer_reserva.php" method="POST">
+
+    <div class="modal-body">
+    
+    <form action="fazer_reserva.php" method="POST">
 <input type="text" name="data_inicio" value="<?php echo $data1 ?>">
 <input type="text" name="data_fim" value="<?php echo $data2 ?>">
 <input type="text" name="valorReserva" value="<?php echo $reserva ?>">
@@ -79,25 +81,7 @@ $conn = getConexao();
         $listagem = $stmt->fetchAll();
 
         ?>
-        <?php
-        //$selecao= array();
-        foreach ($listagem as $lista) {
-
-        ?>
-    <tr>
-
-        <td><?=$lista['modelo'];?></td>
-        <td><?=$lista['cor'];?></td>
-        <td><?=$lista['descricao'];?></td>
-        <td><input type="radio" name="idVeiculo" id="<?php echo $lista['idVeiculo']; ?> " value="<?php echo $lista['idVeiculo'];?> "></td>
-  
-    </tr>
-    <?php
-    };
-    ?>
-   
-</tbody>
-</table>
+        
 
 <select id="idFormaPagamento" name="idFormaPagamento">
             
@@ -117,3 +101,19 @@ $conn = getConexao();
             </select>
             <input type="submit" value="Reservar">
 </form>
+
+
+
+    
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+
+
+
+
+<?php 
+    include 'footer.php';
+?>

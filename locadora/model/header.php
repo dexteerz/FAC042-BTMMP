@@ -176,7 +176,7 @@
           </ul>
         </li>
         <li>
-          <a href="404.php">
+          <a href="reserva.php">
             <i class="fa fa-calendar"></i> <span>Reservar Veículo</span>
           </a>
         </li>
