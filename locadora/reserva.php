@@ -10,45 +10,48 @@
     <div class="box">
         <div class="box-header with-border">
           <h3 class="box-title">Pagina de Reserva</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
         </div>
         <div class="box-body">
 
-<form action="model/recebe_reserva.php" method="POST">
-  <div>
-    <label for="data_inicio">Data Inicio</label>
-    <input type="date" id="data_inicio" name="data_inicio">
-  </div>
-  <div>
-    <label for="data_fim">Data Fim</label>
-    <input type="date" id="data_fim" name="data_fim">
-  </div>
-  <div class="form-group">
-          <label for="selectbasic">Categoria do Veiculo</label>
-          <div>
-            <select id="idCategoria" name="idCategoria" class="form-group">
-            
-              <?php  
-              foreach ($resultado as $categoria) {
-               ?>
-               <option value="<?=$categoria['idCategoria']?>"><?=$categoria['descricao']?></option>
-              <?php
-              };
-              ?>
-            </select>
+        <form class="form-horizontal" action="model/recebe_reserva.php" method="POST">
+          <fieldset>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="placa">Placa</label>  
+                <div class="col-md-6">
+                  <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control input-md" id="reservation" name="dataInicioFim" required >
+                </div>
+                </div>
+            </div>
 
-          </div>
-        </div>
-
-  <input type="submit" value="Veificar">
-</form>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="placa">Categoria do Veiculo</label>  
+                <div class="col-md-6">
+                <select class="form-control input-md" id="idCategoria" name="idCategoria" class="form-group"> 
+                  <?php  
+                  foreach ($resultado as $categoria) {
+                  ?>
+                  <option value="<?=$categoria['idCategoria']?>"><?=$categoria['descricao']?></option>
+                  <?php
+                  };
+                  ?>
+                </select>
+                </div>
+            </div>      
+    
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="singlebutton"></label>
+              <div class="col-md-4">
+                <input type="submit" class="btn btn-primary" value="Verificar">
+              </div>
+            </div>
+          
+          
+          </fieldset>
+        </form>
 
 
 
@@ -60,7 +63,6 @@
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
-
 
 <?php
   include 'model/footer.php'

@@ -40,11 +40,18 @@
     }
     
 ?>
-<form action="recebe_reserva.php" method="POST">
+<form action="fazer_reserva.php" method="POST">
 <input type="text" name="data_inicio" value="<?php echo $data1 ?>">
 <input type="text" name="data_fim" value="<?php echo $data2 ?>">
 <input type="text" name="valorReserva" value="<?php echo $reserva ?>">
 <input type="text" name="idUsuario" value="<?php echo $_SESSION['id'] ?>">
+<br>
+<hr>
+<!--NESTA LINHA VOU TRSNAFORMAR A DATA EM FORMATO BR -->
+<?php echo date('d/m/Y', strtotime($data1)); ?>
+<br>
+<?php echo date('d/m/Y', strtotime($data2)); ?>
+
 
 
 <table border="1">
@@ -108,5 +115,5 @@ $conn = getConexao();
               };
               ?>
             </select>
-            <input type="submit" value="OK">
+            <input type="submit" value="Reservar">
 </form>

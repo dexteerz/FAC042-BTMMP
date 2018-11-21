@@ -1,5 +1,4 @@
 <?php
-  include 'model/conexao.php';
   include 'model/header.php';
   include 'model/listar_categoria.php';
 
