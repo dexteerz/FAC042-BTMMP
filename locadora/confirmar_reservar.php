@@ -59,7 +59,7 @@
     $sql = "SELECT v.idVeiculo, v.modelo, v.cor, c.descricao, c.valorDiaria 
     FROM tbl_veiculo AS v 
     LEFT JOIN (SELECT b.* FROM tbl_reserva AS b 
-    WHERE b.data_fim >= '$datac1' and b.data_inicio <= '$datac2' ) AS b ON v.idVeiculo = b.idVeiculo 
+    WHERE b.data_fim > '$datac1' and b.data_inicio < '$datac2') AS b ON v.idVeiculo = b.idVeiculo 
     inner join tbl_categoria as c on c.idCategoria = v.idCategoria 
     WHERE b.idVeiculo is null and c.descricao = '$cat' and v.status = 1";
     $stmt = $conn->prepare($sql);
@@ -130,7 +130,7 @@
                     <label class="col-md-4 control-label" >Selecione o Veículo</label>
                     <div class="col-md-6">
                         <div class="box-body table-responsive no-padding">
-                            <table id="Reservas" class="table table-striped" align="center">
+                            <table id="Reservas" class="table table-condensed" align="center">
                                 <thead>
                                     <th>Modelo</th>
                                     <th>Cor</th>

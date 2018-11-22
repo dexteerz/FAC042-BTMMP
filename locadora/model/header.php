@@ -175,6 +175,24 @@
             <li><a href="lista_formapagamento.php"><i class="fa fa-circle-o"></i> Formas de Pagamento</a></li>
           </ul>
         </li>
+        <?php 
+       if($_SESSION['perfil'] != "Usuario"){
+        echo "<li class='treeview'>";
+       } else {
+        echo "<li class='treeview' style='display: none;'>";
+       }
+       ?>
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Reservas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="checkin.php"><i class="fa fa-circle-o"></i> Fazer Check-In</a></li>
+            <li><a href="checkout.php"><i class="fa fa-circle-o"></i> Fazer Check-Out</a></li>
+          </ul>
+        </li>
         <li>
           <a href="reserva.php">
             <i class="fa fa-calendar"></i> <span>Reservar Veículo</span>

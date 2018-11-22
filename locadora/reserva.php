@@ -85,7 +85,7 @@
           <div class="tab-content">
 
               <div class="box-body table-responsive no-padding">
-                <table id="usuarios" class="table table-bordered table-striped">
+                <table id="usuarios" class="table table-condensed">
                   <thead>
                     <tr>
                       <th><center>Nº da Reserva</center></th>
