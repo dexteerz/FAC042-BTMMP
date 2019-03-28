@@ -130,7 +130,7 @@
                     <label class="col-md-4 control-label" >Selecione o Veículo</label>
                     <div class="col-md-6">
                         <div class="box-body table-responsive no-padding">
-                            <table id="Reservas" class="table table-condensed" align="center">
+                            <table id="Reservas" class="table table-striped" align="center">
                                 <thead>
                                     <th>Modelo</th>
                                     <th>Cor</th>

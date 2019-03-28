@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   include 'model/header.php';
   include 'model/listar_categoria.php';
   
@@ -29,7 +29,7 @@
         <form class="form-horizontal" action="confirmar_reservar.php" method="POST">
           <fieldset>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="placa">Placa</label>  
+              <label class="col-md-4 control-label" for="placa">Data</label>  
                 <div class="col-md-6">
                   <div class="input-group">
                   <div class="input-group-addon">

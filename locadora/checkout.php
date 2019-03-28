@@ -45,7 +45,7 @@
                       $dt_checkin = str_replace("-", "/", $dado_reserva['data_checkin']);
                       $datac1 = date('d/m/Y', strtotime($dt_inicio));
                       $datac2 = date('d/m/Y', strtotime($dt_fim));
-                      $datac3 = date('d/m/Y H:i', strtotime($dt_reserva));
+                      $datac3 = date('d/m/Y', strtotime($dt_reserva));
                       $datac4 = date('d/m/Y', strtotime($dt_checkin));
                     ?>
                     <tr>

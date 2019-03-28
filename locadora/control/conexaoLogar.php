@@ -1,10 +1,10 @@
 <?php
 session_start();
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "db_locadora";
-$message = "";
+$host = "localhost";  
+$username = "1355671";  
+$password = "admin123";  
+$database = "1355671";  
+$message = "";  
 try
 {
     $connect = new PDO("mysql:host=$host; dbname=$database", $username, $password);

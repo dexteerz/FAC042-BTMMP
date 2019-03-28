@@ -156,6 +156,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVEGAÇÃO</li>
+        <li>
+          <a href="home.php">
+            <i class="fa fa-home"></i> <span>Inicio</span>
+          </a>
+        </li>
       <?php 
        if($_SESSION['perfil'] != "Usuario"){
         echo "<li class='treeview'>";
@@ -176,12 +181,12 @@
           </ul>
         </li>
         <?php 
-       if($_SESSION['perfil'] != "Usuario"){
-        echo "<li class='treeview'>";
-       } else {
-        echo "<li class='treeview' style='display: none;'>";
-       }
-       ?>
+          if($_SESSION['perfil'] != "Usuario"){
+            echo "<li class='treeview'>";
+          } else {
+            echo "<li class='treeview' style='display: none;'>";
+          }
+         ?>
           <a href="#">
             <i class="fa fa-edit"></i> <span>Reservas</span>
             <span class="pull-right-container">
@@ -193,12 +198,13 @@
             <li><a href="checkout.php"><i class="fa fa-circle-o"></i> Fazer Check-Out</a></li>
           </ul>
         </li>
-        <li>
-          <a href="reserva.php">
-            <i class="fa fa-calendar"></i> <span>Reservar Veículo</span>
-          </a>
-        </li>
-        <li class="treeview">
+        <?php 
+          if($_SESSION['perfil'] != "Usuario"){
+            echo "<li class='treeview'>";
+          } else {
+            echo "<li class='treeview' style='display: none;'>";
+          }
+        ?>
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Relatórios</span>
@@ -207,10 +213,23 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="404.php"><i class="fa fa-circle-o"></i> Reservas</a></li>
+            <li><a href="dashboard.php"><i class="fa fa-circle-o"></i> Reservas</a></li>
             <li><a href="404.php"><i class="fa fa-circle-o"></i> Cadastros</a></li>
           </ul>
         </li>
+
+        <?php 
+          if($_SESSION['perfil'] == "Usuario"){
+            echo "<li>";
+          } else {
+            echo "<li style='display: none;'>";
+          }
+        ?>
+          <a href="reserva.php">
+            <i class="fa fa-calendar"></i> <span>Reservar Veículo</span>
+          </a>
+        </li>
+        
         
       </ul>
     </section>

@@ -23,7 +23,7 @@
           <div class="tab-content">
 
               <div class="box-body table-responsive no-padding">
-                <table id="veiculos" class="table table-bordered table-striped">
+                <table id="veiculos" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="exemple2_info">
                   <thead>
                     <tr>
                       <th><center>Placa</center></th>
@@ -48,7 +48,7 @@
 
                       switch ($veiculos['cor']){
                         case 'VERDE':
-                          $corveiculo = "green";
+                          $corveiculo = "gree";
                           break;
                         case 'VERMELHO':
                           $corveiculo = "red";
@@ -67,6 +67,15 @@
                           break;
                         case 'ROSA':
                           $corveiculo = "fuchsia";
+                          break;
+                        case 'GRAFITE':
+                          $corveiculo = "gray";
+                          break;
+                        case 'BRANCO':
+                          $corveiculo = "white";
+                          break;
+                        default:
+                          $corveiculo = "black";
                           break;
                       }
                     ?>

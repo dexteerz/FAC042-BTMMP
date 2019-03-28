@@ -3,9 +3,9 @@
 function getConexao(){
 
     $host = "localhost";  
-    $username = "root";  
-    $password = "";  
-    $database = "db_locadora";  
+    $username = "1355671";  
+    $password = "admin123";  
+    $database = "1355671";  
     $message = "";  
  try  
  {  
