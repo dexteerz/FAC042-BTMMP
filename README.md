@@ -9,12 +9,12 @@ A solução tem as opções de realizar da localização de veículos sendo comp
 
 Recursos a qual nosso projeto deve atinir:
 
-[x] Logar
-[x] Manter Cliente
-[x] Manter Veículo
-[x] Reserva de Veículo
-[x] Devolver Veículo
-[x] Gerar Relatório
+- [x] Logar
+- [x] Manter Cliente
+- [x] Manter Veículo
+- [x] Reserva de Veículo
+- [x] Devolver Veículo
+- [x] Gerar Relatório
 
 
 ## Tecnologias
@@ -33,6 +33,15 @@ Recursos a qual nosso projeto deve atinir:
 3. Jogar os arquivos da pasta Locadora no htdocs (dentro do XAMPP)
 4. Executar o SQL da pasta Mysql criando o banco conforme o SQL
 5. Edite os arquivos dentro da pasta da *Locadora/control/conexaoLogar.php* e *locadora/model/conexao.php* inserindo os dados do Local do servidor, usuário e senha corretamente
+    
+    <?php
+        $host = "localhost";  
+        $username = "1355671";  
+        $password = "admin123";  
+        $database = "1355671";  
+        $message = ""; 
+    ?>
+    
 6. Usuário: admin, Senha: admin
 7. Serviço de e-mail ainda mal configurado
 
